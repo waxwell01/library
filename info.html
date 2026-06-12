@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Middy Newsletter Footer</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+    }
+
+    .newsletter-section {
+      background: #514df1;
+      color: white;
+      padding: 55px 55px 45px;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .newsletter-section h1,
+    .newsletter-section h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .newsletter-section h1 {
+      margin-bottom: 18px;
+    }
+
+    .newsletter-section h2 {
+      margin-bottom: 40px;
+    }
+
+    .newsletter-box {
+      width: min(780px, 70%);
+      margin-left: auto;
+      margin-right: 50px;
+      background: white;
+      border-radius: 24px;
+      padding: 22px 26px 22px 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .newsletter-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: clamp(18px, 2.5vw, 32px);
+      font-weight: 700;
+      color: #333;
+      min-width: 0;
+    }
+
+    .newsletter-box input::placeholder {
+      color: #7c7c7c;
+    }
+
+    .newsletter-box button {
+      background: #ff7856;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 18px 34px;
+      font-size: clamp(18px, 2vw, 26px);
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .newsletter-box button:hover {
+      background: #ff6540;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background-color: #d8def3;
+      padding: 55px 40px 30px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 0.7fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .footer-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 35px;
+    }
+
+    .footer-logo-area img {
+      width: 80px;
+      height: auto;
+    }
+
+    .footer-logo-area h2 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      font-weight: bold;
+      color: #5b55ff;
+    }
+
+    .footer-about p {
+      color: #6f7380;
+      font-size: 28px;
+      line-height: 1.8;
+      font-weight: 700;
+      max-width: 620px;
+    }
+
+    .footer-column h3 {
+      color: #000;
+      font-size: 32px;
+      margin-bottom: 45px;
+      font-weight: 800;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 28px;
+    }
+
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #6f7380;
+      font-size: 28px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #514df1;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .social-icons a {
+      font-size: 45px;
+      color: #4267f5;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+    }
+
+    @media (max-width: 900px) {
+      .newsletter-section {
+        padding: 45px 25px;
+        min-height: auto;
+      }
+
+      .newsletter-section h1,
+      .newsletter-section h2 {
+        font-size: 38px;
+      }
+
+      .newsletter-section h2 {
+        margin-bottom: 32px;
+      }
+
+      .newsletter-box {
+        width: 100%;
+        margin: 0;
+        padding: 24px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .newsletter-box input {
+        font-size: 22px;
+        padding: 8px 0;
+      }
+
+      .newsletter-box button {
+        font-size: 22px;
+        padding: 18px 28px;
+        width: 100%;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .footer-about p,
+      .footer-column ul li a {
+        font-size: 22px;
+      }
+
+      .footer-column h3 {
+        font-size: 26px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .newsletter-section {
+        padding: 40px 18px;
+      }
+
+      .newsletter-section h1,
+      .newsletter-section h2 {
+        font-size: 30px;
+      }
+
+      .newsletter-box {
+        border-radius: 18px;
+        padding: 22px;
+      }
+
+      .newsletter-box input {
+        font-size: 18px;
+      }
+
+      .newsletter-box button {
+        font-size: 18px;
+      }
+
+      .footer {
+        padding: 40px 25px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-logo-area h2 {
+        font-size: 30px;
+      }
+
+      .footer-about p {
+        font-size: 20px;
+      }
+
+      .social-icons {
+        align-items: flex-start;
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="newsletter-section">
+    <h1>Subscribe to Our Newsletter</h1>
+    <h2>Newest Books Updates</h2>
+
+    <form class="newsletter-box" action="info.html" method="post">
+      <input type="email" name="email" placeholder="Type your email here" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <div class="footer-logo-area">
+          <a href="index.html">
+            <img src="logo.png" alt="Middy logo">
+          </a>
+          <h2>Middy</h2>
+        </div>
+
+        <p>
+          Middy is an e-library website that consists of all genres of books from around the world.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="books.html">Shop</a></li>
+          <li><a href="books.html">Authors</a></li>
+          <li><a href="info.html">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Customer Area</h3>
+        <ul>
+          <li><a href="info.html">My Account</a></li>
+          <li><a href="books.html">Tracking List</a></li>
+          <li><a href="index.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Social Media</h3>
+
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="mailto:middylibrary@gmail.com" aria-label="Email">
+            <i class="far fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

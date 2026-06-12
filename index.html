@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M-library</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: white;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background-color: #f4f4f4;
+      gap: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-area img {
+      width: 80px;
+      height: auto;
+    }
+
+    .logo-area h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover {
+      color: blue;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-bar input {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      background-color: blue;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: darkblue;
+    }
+
+    .auth-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .login-btn {
+      text-decoration: none;
+      color: blue;
+      font-size: 16px;
+      padding: 8px 12px;
+      border: 1px solid blue;
+      border-radius: 5px;
+    }
+
+    .login-btn:hover {
+      background-color: blue;
+      color: white;
+    }
+
+    .signup-btn {
+      text-decoration: none;
+      color: white;
+      background-color: blue;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .signup-btn:hover {
+      background-color: darkblue;
+    }
+
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 30px;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-image img {
+      width: 500px;
+      height: 300px;
+      border-radius: 20px;
+    }
+
+    .home {
+      padding: 10px 30px;
+      margin: 0;
+      color: #4a4a4a;
+    }
+
+    .home h1 {
+      font-size: 45px;
+      color: #4f4df2;
+      margin: 0 0 30px 0;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .home p {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 28px 0;
+      line-height: 1.2;
+    }
+
+    .button-section {
+      padding: 10px 30px;
+    }
+
+    .button-section a {
+      text-decoration: none;
+    }
+
+    .button-section button {
+      background-color: #ff7654;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .button-section button:hover {
+      background-color: #ff6540;
+    }
+
+    .contact {
+      color: #4a4a4a;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 28px 30px;
+      line-height: 1.2;
+    }
+
+    .contact #p2 {
+      color: #4f4df2;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .contact p {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 28px 0;
+      line-height: 1.2;
+    }
+
+    @media screen and (max-width: 900px) {
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .search-bar {
+        flex-direction: column;
+      }
+
+      .auth-buttons {
+        flex-direction: column;
+      }
+
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 250px;
+      }
+
+      .home h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+    <div class="logo-area">
+      <a href="home(2).html">
+        <img src="logo.png" alt="M-library logo">
+      </a>
+      <h1>M-library</h1>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="librarymeetup.html">Meetup</a></li>
+      <li><a href="info.html">Newletter</a></li>
+    </ul>
+
+    <form class="search-bar" action="books.html" method="get">
+      <input type="text" name="search" placeholder="Search books...">
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+    </div>
+
+  </nav>
+
+  <section class="hero-section">
+
+    <div class="hero-content">
+      <div class="home">
+        <h1>Welcome To MIDDY'S LIBRARY</h1>
+
+        <p>Track your Reading and Build your Library.</p>
+        <p>Discover your next Favourite Book.</p>
+        <p>Browse from the Largest Collections of Ebooks.</p>
+        <p>Read stories from anywhere at anytime.</p>
+      </div>
+
+      <section class="button-section">
+        <a href="books.html">
+          <button type="button">Get Started For Free</button>
+        </a>
+      </section>
+    </div>
+
+    <div class="hero-image">
+      <img src="library.jpg" alt="Library image">
+    </div>
+
+  </section>
+
+  <section class="contact">
+    <p id="p2">Contact us:</p>
+    <p>Address: South town, 22 Driffters</p>
+    <p>Email: <a href="mailto:middylibrary@gmail.com">middylibrary@gmail.com</a></p>
+  </section>
+
+</body>
+</html>

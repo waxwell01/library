@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Middy's Library Meetup</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 30px;
+      padding: 20px 40px;
+      background: #f1f2fb;
+    }
+
+    .header img {
+      width: 130px;
+      height: auto;
+    }
+
+    .header-text {
+      text-align: left;
+      color: #554ff0;
+      font-weight: bold;
+      letter-spacing: 3px;
+      line-height: 1.2;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 55px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 15px 40px;
+      background: #ffffff;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #554ff0;
+    }
+
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 50px 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 750px;
+    }
+
+    .home {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 28px 0;
+      line-height: 1.2;
+      color: #4a4a4a;
+      text-align: left;
+    }
+
+    .home p {
+      margin: 12px 0;
+    }
+
+    .stats-section {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 80px;
+      padding: 25px 0;
+      margin: 30px 0 0;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .stat-box {
+      text-align: left;
+    }
+
+    .stat-box h2 {
+      margin: 0 0 18px;
+      font-size: 42px;
+      color: #ff7956;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .stat-box p {
+      margin: 0;
+      font-size: 24px;
+      color: #6b6d73;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 1px;
+    }
+
+    .hero-image {
+      flex: 0 0 320px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .button-section {
+      padding: 10px 40px 50px;
+    }
+
+    .button-section a {
+      text-decoration: none;
+    }
+
+    .button-section button {
+      background-color: #ff7654;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .button-section button:hover {
+      background-color: #ff6540;
+    }
+
+    @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .header img {
+        width: 100px;
+      }
+
+      .header-text h1 {
+        font-size: 36px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .hero-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .home {
+        font-size: 18px;
+      }
+
+      .stats-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      .stat-box h2 {
+        font-size: 38px;
+        margin-bottom: 10px;
+      }
+
+      .stat-box p {
+        font-size: 22px;
+      }
+
+      .hero-image {
+        justify-content: flex-start;
+      }
+
+      .hero-image img {
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="header">
+    <a href="index.html">
+      <img src="logo.png" alt="Middy's Library Logo">
+    </a>
+
+    <div class="header-text">
+      <h1>MIDDY'S LIBRARY</h1>
+      <h1>MEETUP.</h1>
+    </div>
+  </section>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="info.html">Newsletter</a></li>
+    <li><a href="about.html">about</a></li>
+  </ul>
+
+  <section class="hero-section">
+
+    <div class="hero-content">
+
+      <div class="home">
+        <p>Meet kinder book lovers in a local meetup book club.</p>
+        <p>Fiction, non-fiction, paperback or hardcover — your choice.</p>
+        <p>Read a new book every month.</p>
+      </div>
+
+      <section class="stats-section">
+        <div class="stat-box">
+          <h2>1M+</h2>
+          <p>Books<br>Collections</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>50K+</h2>
+          <p>Club<br>Members</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>4,972</h2>
+          <p>Groups<br>Created</p>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="flyong book.jpg" alt="Flying book image">
+    </div>
+
+  </section>
+
+  <section class="button-section">
+    <a href="books.html">
+      <button type="button">Join Now</button>
+    </a>
+  </section>
+
+</body>
+</html>

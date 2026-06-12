@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Library</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f3f5ff;
+      padding: 35px 20px;
+    }
+
+    .top-nav {
+      max-width: 1200px;
+      margin: 0 auto 35px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .top-nav a {
+      text-decoration: none;
+      color: #5357f3;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .top-nav a:hover {
+      color: #ff744f;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 50px;
+      font-weight: 900;
+      color: #5357f3;
+      margin-bottom: 45px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .book-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 45px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto 80px;
+    }
+
+    .book-card {
+      width: 100%;
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .book-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #000;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .book-author {
+      font-size: 24px;
+      font-weight: 700;
+      color: #9c9ca5;
+      margin-bottom: 16px;
+    }
+
+    .book-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .book-actions a {
+      text-decoration: none;
+    }
+
+    .borrow {
+      color: #ff6f4f;
+      cursor: pointer;
+    }
+
+    .cart {
+      color: #22c738;
+      cursor: pointer;
+    }
+
+    .borrow:hover,
+    .cart:hover {
+      text-decoration: underline;
+    }
+
+    .genre-area {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #d6dcf2;
+      padding: 18px 50px 45px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 65px;
+    }
+
+    .genre-heading {
+      color: #7076ff;
+      font-size: 30px;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+
+    .category-select {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .category-select a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid #000;
+    }
+
+    .genres {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 75px 112px;
+      margin-bottom: 70px;
+    }
+
+    .genres a {
+      text-decoration: none;
+    }
+
+    .genre-btn {
+      background: #ff744f;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      height: 57px;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .genre-btn:hover {
+      background: #ff6540;
+    }
+
+    .authors-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .authors-header h2 {
+      color: #7076ff;
+      font-size: 31px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .see-all {
+      color: #5555ff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .see-all:hover {
+      text-decoration: underline;
+    }
+
+    .authors {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 27px;
+      text-align: center;
+    }
+
+    .author img {
+      width: 170px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #4d50ff;
+      margin-bottom: 23px;
+    }
+
+    .author h3 {
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: #050505;
+      white-space: nowrap;
+    }
+
+    .author p {
+      color: #ff744f;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1000px) {
+      .book-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .genres {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+      }
+
+      .authors {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      .section-title {
+        font-size: 32px;
+        margin-bottom: 35px;
+      }
+
+      .book-section {
+        grid-template-columns: 1fr;
+      }
+
+      .book-card img {
+        height: 390px;
+      }
+
+      .book-title,
+      .book-author {
+        font-size: 22px;
+      }
+
+      .book-actions {
+        font-size: 18px;
+        padding: 0;
+      }
+
+      .genre-area {
+        padding: 25px 20px;
+      }
+
+      .top-row,
+      .authors-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .genres {
+        grid-template-columns: 1fr;
+      }
+
+      .authors {
+        grid-template-columns: 1fr;
+      }
+
+      .author img {
+        width: 160px;
+        height: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+  </nav>
+
+  <h1 class="section-title">Top Trending Books</h1>
+
+  <section class="book-section">
+
+    <div class="book-card">
+      <a href="books.html">
+        <img src="dairy of a wimpy kid.jpg" alt="Diary of a Wimpy Kid">
+      </a>
+
+      <h2 class="book-title">Diary of a Wimpy Kid</h2>
+      <p class="book-author">Jeff Kinney</p>
+
+      <div class="book-actions">
+        <a href="books.html" class="borrow">Borrow</a>
+        <a href="books.html" class="cart">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <a href="books.html">
+        <img src="gangsta grany.webp" alt="Gangsta Granny">
+      </a>
+
+      <h2 class="book-title">Gangsta Granny</h2>
+      <p class="book-author">David Walliams</p>
+
+      <div class="book-actions">
+        <a href="books.html" class="borrow">Borrow</a>
+        <a href="books.html" class="cart">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <a href="books.html">
+        <img src="percy jackson.jpg" alt="Percy Jackson">
+      </a>
+
+      <h2 class="book-title">Percy Jackson</h2>
+      <p class="book-author">Rick Riordan</p>
+
+      <div class="book-actions">
+        <a href="books.html" class="borrow">Borrow</a>
+        <a href="books.html" class="cart">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <a href="books.html">
+        <img src="planet omar.jpg" alt="Planet Omar">
+      </a>
+
+      <h2 class="book-title">Planet Omar</h2>
+      <p class="book-author">Zanib Mian</p>
+
+      <div class="book-actions">
+        <a href="books.html" class="borrow">Borrow</a>
+        <a href="books.html" class="cart">Add to Cart</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="genre-area">
+
+    <div class="top-row">
+      <h2 class="genre-heading">BROWSE GENRES</h2>
+
+      <div class="category-select">
+        <a href="books.html">All Categories</a>
+        <span class="arrow"></span>
+      </div>
+    </div>
+
+    <div class="genres">
+      <a href="books.html">
+        <button type="button" class="genre-btn">Adventure</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">Biography</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">Thriller</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">Love</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">Fiction</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">Science Fiction</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">History</button>
+      </a>
+
+      <a href="books.html">
+        <button type="button" class="genre-btn">Adult</button>
+      </a>
+    </div>
+
+    <div class="authors-header">
+      <h2>POPULAR AUTHORS</h2>
+      <a href="books.html" class="see-all">See All</a>
+    </div>
+
+    <div class="authors">
+
+      <div class="author">
+        <a href="books.html">
+          <img src="jeff kinney.webp" alt="Jeff Kinney">
+        </a>
+        <h3>Jeff Kinney</h3>
+        <p>10+ Books</p>
+      </div>
+
+      <div class="author">
+        <a href="books.html">
+          <img src="william.jpg" alt="David Walliams">
+        </a>
+        <h3>David Walliams</h3>
+        <p>40+ Books</p>
+      </div>
+
+      <div class="author">
+        <a href="books.html">
+          <img src="rick.jpg" alt="Rick Riordan">
+        </a>
+        <h3>Rick Riordan</h3>
+        <p>31 Books</p>
+      </div>
+
+      <div class="author">
+        <a href="books.html">
+          <img src="india.jpg" alt="Zanib Mian">
+        </a>
+        <h3>Zanib Mian</h3>
+        <p>60+ Books</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>

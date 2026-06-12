@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About Us | Mide Library</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #ffffff;
+      color: #0b2447;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 25px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      color: #0b2447;
+      font-weight: 500;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0b2447;
+      margin-left: 25px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #c9a227;
+    }
+
+    .hero {
+      background: #0b2447;
+      color: #ffffff;
+      text-align: center;
+      padding: 100px 8%;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 750px;
+      margin: 0 auto;
+      color: #f4f4f4;
+    }
+
+    .about-section {
+      padding: 80px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-logo-box {
+      text-align: center;
+      background: #f9f7f0;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid #eadfbf;
+    }
+
+    .about-logo-box img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .about-content h3 {
+      font-size: 36px;
+      color: #0b2447;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 18px;
+      margin-bottom: 18px;
+      color: #263b5e;
+    }
+
+    .highlight {
+      color: #c9a227;
+      font-weight: bold;
+    }
+
+    .mission-section {
+      background: #f9f7f0;
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    .mission-section h3 {
+      font-size: 36px;
+      color: #0b2447;
+      margin-bottom: 20px;
+    }
+
+    .mission-section p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #263b5e;
+    }
+
+    .values-section {
+      padding: 80px 8%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .values-section h3 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 45px;
+      color: #0b2447;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .value-card {
+      background: #ffffff;
+      border: 1px solid #eadfbf;
+      padding: 35px 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .value-card h4 {
+      font-size: 22px;
+      color: #0b2447;
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      font-size: 16px;
+      color: #263b5e;
+    }
+
+    .cta {
+      background: #0b2447;
+      color: #ffffff;
+      text-align: center;
+      padding: 70px 8%;
+    }
+
+    .cta h3 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #f4f4f4;
+    }
+
+    .cta a {
+      background: #c9a227;
+      color: #0b2447;
+      padding: 14px 35px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .cta a:hover {
+      background: #ffffff;
+      color: #0b2447;
+    }
+
+    footer {
+      background: #071a35;
+      color: #ffffff;
+      text-align: center;
+      padding: 25px 8%;
+      font-size: 15px;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
+
+      .hero {
+        padding: 80px 8%;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-content h3,
+      .mission-section h3,
+      .values-section h3 {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        flex-direction: column;
+      }
+
+      .logo h1 {
+        font-size: 24px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav a {
+        margin-left: 0;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .about-section,
+      .values-section {
+        padding: 60px 6%;
+      }
+
+      .mission-section,
+      .cta {
+        padding: 60px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Mide Library Logo">
+      <h1>Mide Library</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="books.html">Books</a>
+      <a href="info">Newsletter</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>About Mide Library</h2>
+    <p>
+      A home for knowledge, learning, discovery, and meaningful stories that inspire growth.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <div class="about-grid">
+
+      <div class="about-logo-box">
+        <img src="logo.png" alt="Mide Library Logo">
+      </div>
+
+      <div class="about-content">
+        <h3>Welcome to <span class="highlight">Mide Library</span></h3>
+
+        <p>
+          Mide Library was created with one simple belief: knowledge should be accessible, inspiring, and powerful enough to change lives.
+        </p>
+
+        <p>
+          We are more than just a library. We are a learning space built for readers, students, researchers, dreamers, and curious minds who believe that every book opens a new door.
+        </p>
+
+        <p>
+          Whether you are looking for academic resources, personal development books, inspiring stories, or a peaceful place to grow your mind, Mide Library is here to support your learning journey.
+        </p>
+
+        <p>
+          Our goal is to create a welcoming environment where people can read, learn, think deeply, and connect with knowledge that helps them become better.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mission-section">
+    <h3>Our Mission</h3>
+    <p>
+      Our mission is to encourage a strong reading culture, provide access to valuable learning materials, and support individuals of all ages in their journey towards education, confidence, and personal growth.
+    </p>
+  </section>
+
+  <section class="values-section">
+    <h3>What We Stand For</h3>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <h4>Knowledge</h4>
+        <p>
+          We believe knowledge is one of the strongest tools anyone can use to grow, lead, and create change.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h4>Access</h4>
+        <p>
+          We are passionate about making books, learning resources, and educational support available to more people.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h4>Community</h4>
+        <p>
+          We aim to build a space where readers, learners, and thinkers feel welcomed, encouraged, and inspired.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <h3>Start Your Learning Journey With Us</h3>
+    <p>
+      Explore books, discover new ideas, and become part of a growing community of readers.
+    </p>
+    <a href="#">Explore Mide Library</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Mide Library. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
